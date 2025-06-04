@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public bool isAttack = false;
     public bool isInvincible = false;
     public bool isJump = false;
+    public bool isBackJump = false;
 
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -26,15 +27,14 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (isStun || isAttack) return;
+        if (Input.GetKey(KeyCode.G))
+        {
+            Airborne(3, 7);
+        }
+        if (isStun || isAttack || isBackJump) return;
 
         Move();
         Jump();
-        if (Input.GetKey(KeyCode.G))
-        {
-            Vector2 force = new Vector2(-3f * transform.localScale.x, 6f);
-            Airborne(force);
-        }
     }
 
     void Move()
@@ -57,16 +57,27 @@ public class Player : MonoBehaviour
             isJump = true;
             playerAnimator.SetTrigger("Jump");
         }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !isJump)
+        {
+            isBackJump = true;
+            playerRigid.linearVelocity = Vector2.zero;
+            Vector2 force = new Vector2(-2f * transform.localScale.x, 4f);
+            playerAnimator.SetTrigger("BackJump");
+            playerRigid.AddForce(force, ForceMode2D.Impulse);
+        }
     }
 
-    public void Airborne(Vector2 knockbackForce)
+
+
+    public void Airborne(float flydistance, float flyheight)
     {
         if (isInvincible) return;
 
         isStun = true;
         isJump = true; // 공중에 있는 상태
         playerRigid.linearVelocity = Vector2.zero;
-        playerRigid.AddForce(knockbackForce, ForceMode2D.Impulse);
+        Vector2 force = new Vector2(-flydistance * transform.localScale.x, flyheight);
+        playerRigid.AddForce(force, ForceMode2D.Impulse);
 
         if (playerAnimator != null)
             playerAnimator.SetBool("Airborne", true);

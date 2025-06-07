@@ -423,7 +423,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.52, y: -1.71, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 29.293999, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -785,16 +785,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c7320d05c65e447abe9d8887a53215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 150
   hp: 150
   attackPower: 10
-  isStun: 0
-  isAttack: 0
-  isInvincible: 0
-  isJump: 0
   moveSpeed: 5
   jumpForce: 5
+  isDashing: 0
+  isInvincible: 0
   skills:
   - {fileID: 11400000, guid: 01b7ab6486c8b2e4ca4f4ad54f7aeeeb, type: 2}
+  - {fileID: 11400000, guid: c349cbd47bd9d274cb6b23a6773b9de3, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

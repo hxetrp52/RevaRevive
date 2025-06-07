@@ -22,6 +22,10 @@ public abstract class Skill : ScriptableObject
         cooldownRemain = cooldown;
     }
 
+    public void StartCooldown()
+    {
+        cooldownRemain = cooldown;
+    }
     // 매 프레임 쿨타임 감소용 메서드
     public void TickCooldown(float deltaTime)
     {

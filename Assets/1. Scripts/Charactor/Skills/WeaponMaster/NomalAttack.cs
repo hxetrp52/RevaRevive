@@ -14,15 +14,21 @@ public class NormalAttack : Skill
         Animator animator = user.GetComponentInChildren<Animator>();
         animator.SetTrigger("Attack");
 
+        Player player = user.GetComponent<Player>(); // Player 스크립트 가져오기
+        if (player == null) return;
+
+        int totalDamage = damage + player.attackPower; // 기본 공격력 + 스킬 고유 데미지
+
         Vector2 direction = user.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
         Vector2 origin = (Vector2)user.transform.position + direction * distance * 0.5f + Vector2.up * offsetY;
 
         RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, boxSize, 0f, Vector2.zero, 0f, enemyLayer);
         foreach (RaycastHit2D hit in hits)
         {
-            hit.collider.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+            hit.collider.SendMessage("TakeDamage", totalDamage, SendMessageOptions.DontRequireReceiver);
         }
     }
+
 
 
     public override void DrawGizmos(GameObject user)

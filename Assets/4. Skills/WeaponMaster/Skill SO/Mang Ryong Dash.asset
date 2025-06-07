@@ -9,17 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bba93d7bdca34b4da811697a825c19a, type: 3}
-  m_Name: Normal Attack
+  m_Script: {fileID: 11500000, guid: fa4b61a238da0b345bc03d822d7d0c5b, type: 3}
+  m_Name: Mang Ryong Dash
   m_EditorClassIdentifier: 
-  skillName: NomalAttack
-  activationKey: 120
+  skillName: Mang
+  activationKey: 113
   icon: {fileID: -6882065267206264175, guid: 3c131fc944624a14980ca85fd759285c, type: 3}
-  cooldown: 0.7
-  boxSize: {x: 2, y: 1}
-  distance: 2
-  damage: 5
-  offsetY: 1
+  cooldown: 3
+  dashDistance: 10
+  dashSpeed: 20
+  inputBufferTime: 0.4
+  maxDashCount: 4
+  damage: 20
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  hitBoxSize: {x: 2, y: 3}
+  hitBoxOffsetY: 1.7

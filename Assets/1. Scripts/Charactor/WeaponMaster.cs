@@ -8,6 +8,8 @@ public class WeaponMaster : Player
 
     [Header("스킬")]
     public Skill[] skills; // 에디터에서 Q, W, E, R 순으로 넣으면 됨
+    public bool isDashing;
+
 
     protected override void Start()
     {

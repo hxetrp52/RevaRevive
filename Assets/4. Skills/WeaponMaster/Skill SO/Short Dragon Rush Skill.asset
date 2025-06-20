@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0e3e0fb82098546b3b977c0646c332, type: 3}
+  m_Name: Short Dragon Rush Skill
+  m_EditorClassIdentifier: 
+  skillName: ShotDash
+  activationKey: 100
+  icon: {fileID: -6882065267206264175, guid: 3c131fc944624a14980ca85fd759285c, type: 3}
+  cooldown: 7
+  effectPrefab: {fileID: 0}
+  effectOffset: {x: 0, y: 0}
+  effectScale: {x: 1, y: 1, z: 1}
+  dashDistance: 1
+  dashDuration: 0.1
+  dashDamage: 10
+  postDelay: 0.15
+  maxCombo: 5
+  boxSize: {x: 1.5, y: 2.3}
+  boxOffsetX: 0.3
+  boxOffsetY: 1.6
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

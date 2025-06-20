@@ -14,10 +14,10 @@ public class NormalAttack : Skill
         Animator animator = user.GetComponentInChildren<Animator>();
         animator.SetTrigger("Attack");
 
-        Player player = user.GetComponent<Player>(); // Player 스크립트 가져오기
+        Player player = user.GetComponent<Player>();
         if (player == null) return;
 
-        int totalDamage = damage + player.attackPower; // 기본 공격력 + 스킬 고유 데미지
+        int totalDamage = damage + player.attackPower;
 
         Vector2 direction = user.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
         Vector2 origin = (Vector2)user.transform.position + direction * distance * 0.5f + Vector2.up * offsetY;
@@ -27,6 +27,8 @@ public class NormalAttack : Skill
         {
             hit.collider.SendMessage("TakeDamage", totalDamage, SendMessageOptions.DontRequireReceiver);
         }
+
+        StartCooldown(); // 단타 스킬은 사용 즉시 쿨타임 적용
     }
 
 

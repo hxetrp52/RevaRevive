@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f640a79c169b24f90a7c2891d8a899, type: 3}
+  m_Name: ReCombo Cycle Skill
+  m_EditorClassIdentifier: 
+  skillName: ReCombo
+  activationKey: 115
+  icon: {fileID: -6882065267206264175, guid: 3c131fc944624a14980ca85fd759285c, type: 3}
+  cooldown: 0.2
+  effectPrefab: {fileID: 0}
+  effectOffset: {x: 0, y: 0}
+  effectScale: {x: 1, y: 1, z: 1}
+  damage: 10
+  stepForward: 0.05
+  postDelay: 0.2
+  boxSize: {x: 2.3, y: 2}
+  offsetX: 0.55
+  offsetY: 1.6
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  comboEffects: []

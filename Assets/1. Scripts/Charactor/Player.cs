@@ -12,12 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField] protected float moveSpeed = 5f; // 이동 속도
     [SerializeField] protected float jumpForce = 5f; // 점프 힘
 
-    protected bool isStun = false;       // 스턴 상태 여부
-    protected bool canMove = false;      // 이동 가능 여부
-    public bool isDashing;
+    public bool isStun = false;       // 스턴 상태 여부
+    public bool canMove = false;      // 이동 가능 여부
     public bool isInvincible = false; // 무적 상태 여부
-    protected bool isJump = false;       // 점프 중 여부
-    protected bool isBackJump = false;   // 백점프 중 여부
+    public bool isJump = false;       // 점프 중 여부
+    public bool isBackJump = false;   // 백점프 중 여부
 
     protected Rigidbody2D playerRigid;   // 플레이어의 Rigidbody2D 컴포넌트
     protected Animator playerAnimator;   // 플레이어 애니메이터
